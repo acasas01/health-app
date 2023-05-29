@@ -1,9 +1,11 @@
-import { Box, Typography, useTheme, useMediaQuery } from "@mui.material";
+import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
+import Form from "./Form";
 
 const LoginPage = () => {
     const theme = useTheme();
+    const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
-    return <Box>
+    return ( <Box>
         <Box 
         width="100%" 
         backgroundColor={theme.palette.background.alt}
@@ -29,10 +31,12 @@ const LoginPage = () => {
             <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem"}}>
                 Welcome to HealthLink, a self-care app for tracking sexual interactions and alerting partners
             </Typography>
+            <Form />
 
         </Box>
         </Box>
+    );
 
 };
 
-export default LoginPage;
+export default LoginPage
